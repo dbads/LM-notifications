@@ -17,14 +17,14 @@ class User:
     else:
       print('User already exists')
 
-  def remove_user(self, to_user, from_user):
-    from_username = from_user['username']
-    to_username = to_user['username']
+  def remove_user(self, data):
+    from_username = data['from_username']
+    to_username = data['to_username']
 
     # validate command issuer
     if not from_username in self.users:
       print('Error, only a valid admin user can remove other users')
-    if from_user.role != 'admin':
+    if self.users[from_username].role != 'admin':
       print('Permission Error, only admin users can remove other users')
 
     # an admin can nto delete him/herself
@@ -47,11 +47,11 @@ class User:
       print('User does not exist')
     else:
       if not 'topics' in self.users[username]:
-          self.users[username]['topics'] = {topicname: {}}
+        self.users[username]['topics'] = {topicname: {}}
       else:
         self.users[username]['topics'][topicname] = {}
 
-
   # for development purpose
+
   def reset(self):
     self.users = {}

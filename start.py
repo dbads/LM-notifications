@@ -19,7 +19,7 @@ def start():
       if command_name == 'addUser':
         users.add_user({'role': arg2, 'username': arg1})
       elif command_name == 'removeUser':
-        users.add_user({'from_user': arg2, 'to_user': arg1})
+        users.remove_user({'from_username': arg2, 'to_username': arg1})
 
       # topic actions
       elif command_name == 'addTopic':
