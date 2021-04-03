@@ -23,9 +23,9 @@ def start():
 
       # topic actions
       elif command_name == 'addTopic':
-        topics.add_topic({'username': arg1, 'topicname': arg2, 'users': users})
+        topics.add_topic({'username': arg2, 'topicname': arg1, 'users': users})
       elif command_name == 'removeTopic':
-        topics.remove_topic({'username': arg1, 'topicname': arg2, 'users': users})
+        topics.remove_topic({'username': arg2, 'topicname': arg1, 'users': users})
 
       elif command_name == 'resetUsers':
         users.reset()
