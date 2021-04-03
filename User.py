@@ -24,7 +24,7 @@ class User:
     # validate command issuer
     if not from_username in self.users:
       print('Error, only a valid admin user can remove other users')
-    if self.users[from_username].role != 'admin':
+    if self.users[from_username]['role'] != 'admin':
       print('Permission Error, only admin users can remove other users')
 
     # an admin can nto delete him/herself
