@@ -7,9 +7,7 @@ from Topic import Topic
 def start():
   while True:
     command = input('Enter command $ ')
-    print('command')
     [command_name, arg1, arg2] = command.split(' ')
-    print(command_name, arg1, arg2)
 
     users = User()
     topics = Topic()
